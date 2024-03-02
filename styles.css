@@ -1,0 +1,122 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px; /* Increased padding for better spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added box shadow for depth */
+}
+
+
+.navbar .container {
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Align items vertically */
+}
+
+.navbar-list {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar-list li {
+    margin-left: 20px; /* Adjust margin to space out items */
+}
+
+.navbar-list li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    padding: 10px 15px; /* Padding for navbar links */
+    border-radius: 5px; /* Rounded corners for navbar links */
+}
+
+.navbar-list li a:hover {
+    background-color: #fff; /* Background color on hover */
+    color: #333; /* Text color on hover */
+}
+
+/* Position Section Styles */
+.position-section {
+    margin-bottom: 40px;
+}
+
+.position-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.player-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.player-item {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease;
+}
+
+.player-item:hover {
+    transform: translateY(-3px); /* Lift the item on hover */
+}
+
+.player-rank {
+    width: 50px;
+    text-align: center;
+    font-size: 20px;
+    margin-right: 20px; 
+}
+
+.player-name {
+    font-weight: bold;
+    font-size: 18px; /* Increased font size for name */
+    margin-right: 15px;
+}
+
+.player-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Make image round */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+    margin-right: 20px; /* Added margin between image and text */
+}
+
+
+
+.player-school {
+    font-size: 18px;
+    color: #888; /* Adjust color as needed */
+}
