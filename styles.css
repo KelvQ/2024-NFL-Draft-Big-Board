@@ -8,7 +8,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    padding-top: 70px;
+    padding-top: 100px;
 }
 
 .container {
@@ -95,7 +95,6 @@ h1 {
 
 .player-item:hover {
     transform: translateY(-3px);
-    /* Lift the item on hover */
 }
 
 .player-rank {
@@ -125,5 +124,11 @@ h1 {
 
 .player-school {
     font-size: 18px;
+    color: #888; /* Adjust color as needed */
+}
+
+.player-position {
+    font-size: 18px;
+    margin-left: auto;
     color: #888; /* Adjust color as needed */
 }

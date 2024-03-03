@@ -13,76 +13,101 @@
     <nav class="navbar">
         <div class="container">
             <ul class="navbar-list">
-                <li><a href="index.html">Overall</a></li>
-                <li><a href="position_rankings/quarterbacks.html">QB</a></li>
-                <li><a href="position_rankings/widereceivers.html">WR</a></li>
-                <li><a href="position_rankings/runningbacks.html">RB</a></li>
-                <li><a href="position_rankings/tightends.html">TE</a></li>
-                <li><a href="position_rankings/insideoline.html">IOL</a></li>
-                <li><a href="position_rankings/offensivetackles.html">OT</a></li>
-                <li><a href="position_rankings/edge.html">EDGE</a></li>
-                <li><a href="position_rankings/insidedline.html">IDL</a></li>
-                <li><a href="position_rankings/linebackers.html">LB</a></li>
-                <li><a href="position_rankings/cornerbacks.html">CB</a></li>
-                <li><a href="position_rankings/safteys.html">S</a></li>
+                <li><a href="#" data-position="all">Overall</a></li>
+                <li><a href="#" data-position="QB">QB</a></li>
+                <li><a href="#" data-position="WR">WR</a></li>
+                <li><a href="#" data-position="RB">RB</a></li>
+                <li><a href="#" data-position="TE">TE</a></li>
+                <li><a href="#" data-position="IOL">IOL</a></li>
+                <li><a href="#" data-position="OT">OT</a></li>
+                <li><a href="#" data-position="EDGE">EDGE</a></li>
+                <li><a href="#" data-position="IDL">IDL</a></li>
+                <li><a href="#" data-position="LB">LB</a></li>
+                <li><a href="#" data-position="CB">CB</a></li>
+                <li><a href="#" data-position="S">S</a></li>
             </ul>
         </div>
     </nav>
 
     <div class="container">
-        <h1>Overall NFL Draft Big Board</h1>
+        <h1 id="position-title">Overall NFL Draft Big Board</h1>
 
-        <!-- Quarterbacks Section -->
-        <div class="position-section" id="quarterbacks">
-            <h2 class="position-title">Overall</h2>
+        <div class="position-section">
             <ul class="player-list">
-                <!-- Sample player items -->
-                <li class="player-item">
-                    <div class="player-rank">1</div>
-                    <div class="player-image" style="background-image: url('images/qb/caleb_williams.jpg')"></div>
-                    <div class="player-name">Caleb Williams</div>
-                    <div class="player-school">USC</div>
-                </li>
-                <li class="player-item">
-                    <div class="player-rank">2</div>
-                    <div class="player-image" style="background-image: url('images/qb/drake_maye.jpg')"></div>
-                    <div class="player-name">Drake Maye</div>
-                    <div class="player-school">North Carolina</div>
-                </li>
-                <li class="player-item">
-                    <div class="player-rank">3</div>
-                    <div class="player-image" style="background-image: url('images/qb/jayden_daniels.jpg')"></div>
-                    <div class="player-name">Jayden Daniels</div>
-                    <div class="player-school">LSU</div>
-                </li>
-                <li class="player-item">
-                    <div class="player-rank">4</div>
-                    <div class="player-image" style="background-image: url('images/qb/jj_mccarthy.jpg')"></div>
-                    <div class="player-name">J.J. McCarthy</div>
-                    <div class="player-school">Michigan</div>
-                </li>
-                <li class="player-item">
-                    <div class="player-rank">5</div>
-                    <div class="player-image" style="background-image: url('images/qb/michael_penix.jpg')"></div>
-                    <div class="player-name">Michael Penix</div>
-                    <div class="player-school">Washignton</div>
-                </li>
-                <li class="player-item">
-                    <div class="player-rank">6</div>
-                    <div class="player-image" style="background-image: url('images/qb/bo_nix.jpg')"></div>
-                    <div class="player-name">Bo Nix</div>
-                    <div class="player-school">Oregon</div>
-                </li>
-                <li class="player-item">
-                    <div class="player-rank">7</div>
-                    <div class="player-image" style="background-image: url('images/qb/spencer_rattler.jpg')"></div>
-                    <div class="player-name">Spencer Rattler</div>
-                    <div class="player-school">South Carolina</div>
-                </li>
-                <!-- Add more player items as needed -->
+                <!-- Players will be dynamically added here -->
             </ul>
         </div>
     </div>
+
+    <script>
+        // Define your multi-dimensional array with player data
+        var playerData = [
+            { name: "Caleb Williams", image: "images/qb/caleb_williams.jpg", school: "USC", position: "TE" },
+            { name: "Drake Maye", image: "images/qb/drake_maye.jpg", school: "North Carolina", position: "QB" },
+            { name: "Jayden Daniels", image: "images/qb/jayden_daniels.jpg", school: "LSU", position: "CB" },
+            { name: "J.J. McCarthy", image: "images/qb/jj_mccarthy.jpg", school: "Michigan", position: "QB" },
+            { name: "Michael Penix", image: "images/qb/michael_penix.jpg", school: "Washington", position: "RB" },
+            { name: "Bo Nix", image: "images/qb/bo_nix.jpg", school: "Oregon", position: "QB" },
+            { name: "Spencer Rattler", image: "images/qb/spencer_rattler.jpg", school: "South Carolina", position: "QB" }
+            // Add more player data as needed
+        ];
+
+        // Function to create and append list items to the player list
+        function createPlayerItems(data) {
+            var playerList = document.querySelector('.player-list');
+            playerList.innerHTML = ""; // Clear previous list items
+
+            data.forEach(function (player, i) {
+                var listItem = document.createElement('li');
+                listItem.classList.add('player-item');
+
+                var html = `
+                    <div class="player-rank">${i + 1}</div>
+                    <div class="player-image" style="background-image: url('${player.image}')"></div>
+                    <div class="player-details">
+                        <div class="player-name">${player.name}</div>
+                        <div class="player-school">${player.school}</div>
+                        <div class="player-position">${player.position}</div>
+                    </div>
+                `;
+                listItem.innerHTML = html;
+                playerList.appendChild(listItem);
+            });
+        }
+
+        // Call the function initially to create and append list items
+        createPlayerItems(playerData);
+
+        // Function to filter player list based on position
+        // Function to filter player list based on position
+            function filterByPosition(position) {
+                var filteredData;
+
+                if (position === 'all') {
+                    filteredData = playerData;
+                } else {
+                    filteredData = playerData.filter(function (player) {
+                        return player.position === position;
+                    });
+                }
+
+                // Update the position title
+                var positionTitle = document.getElementById('position-title');
+                positionTitle.textContent = position === 'all' ? 'Overall NFL Draft Big Board' : position + ' NFL Draft Big Board';
+
+                createPlayerItems(filteredData);
+            }
+
+
+        // Add event listeners to navbar items to filter by position
+        document.querySelectorAll('.navbar-list li a').forEach(function (item) {
+            item.addEventListener('click', function (e) {
+                e.preventDefault();
+                var position = this.getAttribute('data-position');
+                filterByPosition(position);
+            });
+        });
+    </script>
 
 </body>
 
