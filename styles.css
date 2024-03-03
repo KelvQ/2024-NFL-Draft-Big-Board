@@ -46,8 +46,7 @@ h1 {
 }
 
 .navbar-list li {
-    margin-left: 20px;
-    /* Adjust margin to space out items */
+    margin-left: 10px; /* Adjust margin to space out items */
 }
 
 .navbar-list li a {
@@ -55,17 +54,13 @@ h1 {
     color: #fff;
     font-weight: bold;
     transition: all 0.3s ease;
-    padding: 10px 15px;
-    /* Padding for navbar links */
-    border-radius: 5px;
-    /* Rounded corners for navbar links */
+    padding: 10px 15px;  /* Padding for navbar links */
+    border-radius: 5px;  /* Rounded corners for navbar links */
 }
 
 .navbar-list li a:hover {
-    background-color: #fff;
-    /* Background color on hover */
-    color: #333;
-    /* Text color on hover */
+    background-color: #fff; /* Background color on hover */
+    color: #333; /* Text color on hover */
 }
 
 /* Position Section Styles */
@@ -116,22 +111,16 @@ h1 {
 .player-image {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
-    /* Make image round */
-    background-size: cover;
-    /* Cover the entire container */
-    background-position: center;
-    /* Center the background image */
-    background-repeat: no-repeat;
-    /* Prevent background image from repeating */
-    margin-right: 20px;
-    /* Added margin between image and text */
+    border-radius: 50%;   /* Make image round */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+    margin-right: 20px; /* Added margin between image and text */
 }
 
 
 
 .player-school {
     font-size: 18px;
-    color: #888;
-    /* Adjust color as needed */
+    color: #888; /* Adjust color as needed */
 }
