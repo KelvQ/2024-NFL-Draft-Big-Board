@@ -31,7 +31,6 @@
 
     <div class="container">
         <h1 id="position-title">Overall NFL Draft Big Board</h1>
-
         <div class="position-section">
             <ul class="player-list">
                 <!-- Players will be dynamically added here -->
@@ -42,13 +41,13 @@
     <script>
         // Define your multi-dimensional array with player data
         var playerData = [
-            { name: "Caleb Williams", image: "images/qb/caleb_williams.jpg", school: "USC", position: "TE" },
-            { name: "Drake Maye", image: "images/qb/drake_maye.jpg", school: "North Carolina", position: "QB" },
-            { name: "Jayden Daniels", image: "images/qb/jayden_daniels.jpg", school: "LSU", position: "CB" },
-            { name: "J.J. McCarthy", image: "images/qb/jj_mccarthy.jpg", school: "Michigan", position: "QB" },
-            { name: "Michael Penix", image: "images/qb/michael_penix.jpg", school: "Washington", position: "RB" },
-            { name: "Bo Nix", image: "images/qb/bo_nix.jpg", school: "Oregon", position: "QB" },
-            { name: "Spencer Rattler", image: "images/qb/spencer_rattler.jpg", school: "South Carolina", position: "QB" }
+            { overallRank: "1", name: "Caleb Williams", image: "images/qb/caleb_williams.jpg", school: "USC", position: "TE" },
+            { overallRank: "2", name: "Drake Maye", image: "images/qb/drake_maye.jpg", school: "North Carolina", position: "QB" },
+            { overallRank: "3", name: "Jayden Daniels", image: "images/qb/jayden_daniels.jpg", school: "LSU", position: "CB" },
+            { overallRank: "4", name: "J.J. McCarthy", image: "images/qb/jj_mccarthy.jpg", school: "Michigan", position: "QB" },
+            { overallRank: "5", name: "Michael Penix", image: "images/qb/michael_penix.jpg", school: "Washington", position: "RB" },
+            { overallRank: "6", name: "Bo Nix", image: "images/qb/bo_nix.jpg", school: "Oregon", position: "QB" },
+            { overallRank: "7", name: "Spencer Rattler", image: "images/qb/spencer_rattler.jpg", school: "South Carolina", position: "QB" }
             // Add more player data as needed
         ];
 
@@ -62,42 +61,58 @@
                 listItem.classList.add('player-item');
 
                 var html = `
-                    <div class="player-rank">${i + 1}</div>
+                    <div class="player-rank">${i+1}</div>
                     <div class="player-image" style="background-image: url('${player.image}')"></div>
                     <div class="player-details">
                         <div class="player-name">${player.name}</div>
                         <div class="player-school">${player.school}</div>
                         <div class="player-position">${player.position}</div>
                     </div>
+                    <div class="player-stats">
+                        <div class="player-overall-rank">Overall Rank: ${player.overallRank}</div>
+                        <div class="player-position-rank">Position Rank: ${i+1}</div>
+                    </div>
                 `;
                 listItem.innerHTML = html;
                 playerList.appendChild(listItem);
+
+                // Add event listener to each list item
+                listItem.addEventListener('click', function () {
+                    listItem.classList.toggle('expanded');
+                });
             });
+        }
+
+        // Function to get the rank of the player within the same position
+        function getRankByPosition(data, position) {
+            return data.filter(function (player) {
+                return player.position === position;
+            }).findIndex(function (player) {
+                return player.position === position;
+            }) + 1;
         }
 
         // Call the function initially to create and append list items
         createPlayerItems(playerData);
 
         // Function to filter player list based on position
-        // Function to filter player list based on position
-            function filterByPosition(position) {
-                var filteredData;
+        function filterByPosition(position) {
+            var filteredData;
 
-                if (position === 'all') {
-                    filteredData = playerData;
-                } else {
-                    filteredData = playerData.filter(function (player) {
-                        return player.position === position;
-                    });
-                }
-
-                // Update the position title
-                var positionTitle = document.getElementById('position-title');
-                positionTitle.textContent = position === 'all' ? 'Overall NFL Draft Big Board' : position + ' NFL Draft Big Board';
-
-                createPlayerItems(filteredData);
+            if (position === 'all') {
+                filteredData = playerData;
+            } else {
+                filteredData = playerData.filter(function (player) {
+                    return player.position === position;
+                });
             }
 
+            // Update the position title
+            var positionTitle = document.getElementById('position-title');
+            positionTitle.textContent = position === 'all' ? 'Overall NFL Draft Big Board' : position + ' NFL Draft Big Board';
+
+            createPlayerItems(filteredData);
+        }
 
         // Add event listeners to navbar items to filter by position
         document.querySelectorAll('.navbar-list li a').forEach(function (item) {

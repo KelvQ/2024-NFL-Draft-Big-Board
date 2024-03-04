@@ -132,3 +132,20 @@ h1 {
     margin-left: auto;
     color: #888; /* Adjust color as needed */
 }
+
+.player-item.expanded .player-stats {
+    max-height: 100px;
+}
+
+.player-stats {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease;
+    margin-top: 5px;
+    margin-left: auto;
+    font-weight: bold;
+}
+
+.player-stats>div {
+    margin-bottom: 5px;
+}
