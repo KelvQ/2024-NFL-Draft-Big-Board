@@ -28,8 +28,7 @@ h1 {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
-    /* Ensure navbar is above other content */
+    z-index: 1000; /* Ensure navbar is above other content */
     background-color: #333;
     color: #fff;
     padding: 10px 0;
@@ -126,8 +125,6 @@ h1 {
     margin-right: 20px; /* Added margin between image and text */
 }
 
-
-
 .player-school {
     font-size: 18px;
     color: #888; /* Adjust color as needed */
@@ -154,4 +151,23 @@ h1 {
 
 .player-stats>div {
     margin-bottom: 5px;
+}
+
+/* Search Bar Styles */
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 300px; /* Adjust the width as needed */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: #333;
 }
