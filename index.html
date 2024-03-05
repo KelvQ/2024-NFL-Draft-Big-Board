@@ -13,7 +13,7 @@
     <nav class="navbar">
         <div class="container">
             <ul class="navbar-list">
-                <li><a href="#" data-position="all">Overall</a></li>
+                <li><a href="#" data-position="all" class="selected">Overall</a></li>
                 <li><a href="#" data-position="QB">QB</a></li>
                 <li><a href="#" data-position="WR">WR</a></li>
                 <li><a href="#" data-position="RB">RB</a></li>
@@ -38,85 +38,8 @@
         </div>
     </div>
 
-    <script>
-        // Define your multi-dimensional array with player data
-        var playerData = [
-            { overallRank: "1", positionRank: "1", name: "Caleb Williams", image: "images/qb/caleb_williams.jpg", school: "USC", position: "TE" },
-            { overallRank: "2", positionRank: "2", name: "Drake Maye", image: "images/qb/drake_maye.jpg", school: "North Carolina", position: "QB" },
-            { overallRank: "3", positionRank: "3", name: "Jayden Daniels", image: "images/qb/jayden_daniels.jpg", school: "LSU", position: "CB" },
-            { overallRank: "4", positionRank: "4", name: "J.J. McCarthy", image: "images/qb/jj_mccarthy.jpg", school: "Michigan", position: "QB" },
-            { overallRank: "5", positionRank: "5", name: "Michael Penix", image: "images/qb/michael_penix.jpg", school: "Washington", position: "RB" },
-            { overallRank: "6", positionRank: "6", name: "Bo Nix", image: "images/qb/bo_nix.jpg", school: "Oregon", position: "QB" },
-            { overallRank: "7", positionRank: "7", name: "Spencer Rattler", image: "images/qb/spencer_rattler.jpg", school: "South Carolina", position: "QB" }
-            // Add more player data as needed
-        ];
-
-
-
-        // Function to create and append list items to the player list
-        function createPlayerItems(data) {
-            var playerList = document.querySelector('.player-list');
-            playerList.innerHTML = ""; // Clear previous list items
-
-            data.forEach(function (player, i) {
-                var listItem = document.createElement('li');
-                listItem.classList.add('player-item');
-                var positionTitle = document.getElementById('position-title');
-                
-                var html = `
-                    <div class="player-rank">${i + 1}</div>
-                    <div class="player-image" style="background-image: url('${player.image}')"></div>
-                    <div class="player-details">
-                        <div class="player-name">${player.name}</div>
-                        <div class="player-school">${player.school}</div>
-                        <div class="player-position">${player.position}</div>
-                    </div>
-                    <div class="player-stats">
-                        <div class="player-overall-rank">Overall Rank: ${player.overallRank}</div>
-                        <div class="player-position-rank">Position Rank: ${player.positionRank}</div>
-                    </div>
-                `;
-                listItem.innerHTML = html;
-                playerList.appendChild(listItem);
-
-                // Add event listener to each list item
-                listItem.addEventListener('click', function () {
-                    listItem.classList.toggle('expanded');
-                });
-            });
-        }
-
-        // Call the function initially to create and append list items
-        createPlayerItems(playerData);
-
-        // Function to filter player list based on position
-        function filterByPosition(position) {
-            var filteredData;
-
-            if (position === 'all') {
-                filteredData = playerData;
-            } else {
-                filteredData = playerData.filter(function (player) {
-                    return player.position === position;
-                });
-            }
-
-            // Update the position title
-            var positionTitle = document.getElementById('position-title');
-            positionTitle.textContent = position === 'all' ? 'Overall NFL Draft Big Board' : position + ' NFL Draft Big Board';
-
-            createPlayerItems(filteredData);
-        }
-
-        // Add event listeners to navbar items to filter by position
-        document.querySelectorAll('.navbar-list li a').forEach(function (item) {
-            item.addEventListener('click', function (e) {
-                e.preventDefault();
-                var position = this.getAttribute('data-position');
-                filterByPosition(position);
-            });
-        });
-    </script>
+    <script src="playerData.js"></script>
+    <script src="listCreation.js"></script>
 
 </body>
 
