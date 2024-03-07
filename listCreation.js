@@ -52,7 +52,7 @@ function filterByPosition(position) {
 
     // Update the position title
     var positionTitle = document.getElementById('position-title');
-    positionTitle.textContent = position === 'all' ? 'Overall NFL Draft Big Board' : position + ' NFL Draft Big Board';
+    positionTitle.textContent = position === 'all' ? '2024 Overall NFL Draft Big Board' : '2024 ' + position + ' NFL Draft Big Board';
 
     createPlayerItems(filteredData);
 }
