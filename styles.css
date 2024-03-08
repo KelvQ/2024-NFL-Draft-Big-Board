@@ -15,7 +15,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    padding-top: 130px;
+    padding-top: 100px;
 }
 
 .container {
@@ -43,8 +43,10 @@ h1 {
 
 .navbar .container {
     display: flex;
-    justify-content: space-between; /* Items spaced apart */
-    align-items: center; /* Align items vertically */
+    justify-content: space-between;
+    /* Items spaced apart */
+    align-items: center;
+    /* Align items vertically */
 }
 
 .navbar-list {
@@ -53,7 +55,8 @@ h1 {
 }
 
 .navbar-list li {
-    margin-left: 10px;  /* Adjust margin to space out items */
+    margin-left: 10px;
+    /* Adjust margin to space out items */
 }
 
 .navbar-list li a {
@@ -61,16 +64,62 @@ h1 {
     color: #fff;
     font-weight: bold;
     transition: all 0.3s ease;
-    padding: 10px 15px; /* Padding for navbar links */
-    border-radius: 5px;  /* Rounded corners for navbar links */
+    padding: 10px 15px;
+    /* Padding for navbar links */
+    border-radius: 5px;
+    /* Rounded corners for navbar links */
 }
 
 .navbar-list li a:hover {
-    background-color: #fff;  /* Background color on hover */
-    color: #333; /* Text color on hover */
+    background-color: #fff;
+    /* Background color on hover */
+    color: #333;
+    /* Text color on hover */
 }
 
 .navbar-list li a.selected {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Position Selection Styles */
+.position-selection {
+    list-style-type: none;
+    display: flex;
+    background-color: #333;
+    /* Dark gray background */
+    padding: 20px 10px;
+    /* Increased top and bottom padding */
+    border-radius: 5px;
+    /* Rounded corners */
+    justify-content: center;
+    /* Center the list items horizontally */
+}
+
+.position-selection li {
+    margin: 0 10px;
+    /* Adjust margin to space out items */
+}
+
+.position-selection li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    padding: 10px 15px;
+    /* Padding for navbar links */
+    border-radius: 5px;
+    /* Rounded corners for navbar links */
+}
+
+.position-selection li a:hover {
+    background-color: #fff;
+    /* Background color on hover */
+    color: #333;
+    /* Text color on hover */
+}
+
+.position-selection li a.selected {
     background-color: #fff;
     color: #333;
 }
@@ -123,22 +172,29 @@ h1 {
 .player-image {
     width: 50px;
     height: 50px;
-    border-radius: 50%;   /* Make image round */
-    background-size: cover; /* Cover the entire container */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Prevent background image from repeating */
-    margin-right: 20px; /* Added margin between image and text */
+    border-radius: 50%;
+    /* Make image round */
+    background-size: cover;
+    /* Cover the entire container */
+    background-position: center;
+    /* Center the background image */
+    background-repeat: no-repeat;
+    /* Prevent background image from repeating */
+    margin-right: 20px;
+    /* Added margin between image and text */
 }
 
 .player-school {
     font-size: 18px;
-    color: #888; /* Adjust color as needed */
+    color: #888;
+    /* Adjust color as needed */
 }
 
 .player-position {
     font-size: 18px;
     margin-left: auto;
-    color: #888; /* Adjust color as needed */
+    color: #888;
+    /* Adjust color as needed */
 }
 
 .player-item.expanded .player-stats {
@@ -161,11 +217,13 @@ h1 {
 /* Search Bar Styles */
 .search-container {
     text-align: center;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
 .search-input {
-    width: 300px;  /* Adjust the width as needed */
+    width: 300px;
+    /* Adjust the width as needed */
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
