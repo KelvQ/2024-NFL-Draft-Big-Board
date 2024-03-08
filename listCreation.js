@@ -20,8 +20,8 @@ function createPlayerItems(data) {
                 <div class="player-position">${player.position}</div>
             </div>
             <div class="player-stats">
-                <div class="player-overall-rank">Overall Rank: ${player.overallRank}</div>
-                <div class="player-position-rank">Position Rank: ${player.positionRank}</div>
+                <div class="player-overall-rank">Overall Rank: ${player.ranks.overallRank}</div>
+                <div class="player-position-rank">Position Rank: ${player.ranks.positionRank}</div>
             </div>
         `;
         listItem.innerHTML = html;
