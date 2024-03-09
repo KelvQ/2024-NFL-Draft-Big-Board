@@ -82,6 +82,9 @@ h1 {
     padding: 20px 10px; /* Increased top and bottom padding */
     border-radius: 5px; /* Rounded corners */
     justify-content: center; /* Center the list items horizontally */
+    position: sticky;
+    top: 95px;
+    z-index: 900;
 }
 
 .position-selection li {
