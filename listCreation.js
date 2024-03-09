@@ -3,16 +3,12 @@ function createPlayerItems(data) {
     var playerList = document.querySelector('.player-list');
     playerList.innerHTML = ""; // Clear previous list items
 
-    data.forEach(function (player, i) {
-        var originalIndex = playerData.findIndex(function (item) {
-            return item === player;
-        });
-
+    data.forEach(function (player) {
         var listItem = document.createElement('li');
         listItem.classList.add('player-item');
 
         var html = `
-            <div class="player-rank">${originalIndex + 1}</div>
+            <div class="player-rank">${player.rankings.overallRank}</div>
             <div class="player-image" style="background-image: url('${player.image}')"></div>
             <div class="player-details">
                 <div class="player-name">${player.name}</div>
@@ -20,8 +16,8 @@ function createPlayerItems(data) {
                 <div class="player-position">${player.position}</div>
             </div>
             <div class="player-stats">
-                <div class="player-overall-rank">Overall Rank: ${player.ranks.overallRank}</div>
-                <div class="player-position-rank">Position Rank: ${player.ranks.positionRank}</div>
+                <div class="player-overall-rank">Overall Rank: ${player.rankings.overallRank}</div>
+                <div class="player-position-rank">Position Rank: ${player.rankings.positionRank}</div>
             </div>
         `;
         listItem.innerHTML = html;

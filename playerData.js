@@ -3,72 +3,52 @@ var playerData = [
         name: "Caleb Williams",
         image: "images/qb/caleb_williams.jpg",
         school: "USC",
-        position: "QB",
-        ranks: {
-            overallRank: 1,
-            positionRank: 1
-        }
+        position: "RB"
     },
     {
         name: "Drake Maye",
         image: "images/qb/drake_maye.jpg",
         school: "North Carolina",
-        position: "QB",
-        ranks: {
-            overallRank: 2,
-            positionRank: 2
-        }
+        position: "QB"
     },
     {
         name: "Jayden Daniels",
         image: "images/qb/jayden_daniels.jpg",
         school: "LSU",
-        position: "QB",
-        ranks: {
-            overallRank: 3,
-            positionRank: 3
-        }
+        position: "RB"
     },
     {
         name: "J.J. McCarthy",
         image: "images/qb/jj_mccarthy.jpg",
         school: "Michigan",
-        position: "QB",
-        ranks: {
-            overallRank: 4,
-            positionRank: 4
-        }
+        position: "QB"
     },
     {
         name: "Micheal Penix",
         image: "images/qb/michael_penix.jpg",
         school: "Washington",
-        position: "QB",
-        ranks: {
-            overallRank: 5,
-            positionRank: 5
-        }
+        position: "TE"
     },
     {
         name: "Spencer Rattler",
         image: "images/qb/spencer_rattler.jpg",
         school: "South Carolina",
-        position: "QB",
-        ranks: {
-            overallRank: 6,
-            positionRank: 6
-        }
+        position: "TE"
     },
     {
         name: "Bo Nix",
         image: "images/qb/bo_nix.jpg",
         school: "Oregon",
-        position: "QB",
-        ranks: {
-            overallRank: 7,
-            positionRank: 7
-        }
+        position: "QB"
     },
 
 
 ];
+
+// Calculate overallRank and positionRank
+playerData.forEach(function (player, index) {
+    player.rankings = {
+        overallRank: index + 1,
+        positionRank: playerData.filter(p => p.position === player.position).indexOf(player) + 1
+    };
+});
