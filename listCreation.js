@@ -1,9 +1,10 @@
 // Function to create and append list items to the player list
-function createPlayerItems(data) {
+function createPlayerItems(keys) {
     var playerList = document.querySelector('.player-list');
     playerList.innerHTML = ""; // Clear previous list items
 
-    data.forEach(function (player) {
+    keys.forEach(function (key) {
+        var player = playerData[key]; // Fetch player data using the key
         var listItem = document.createElement('li');
         listItem.classList.add('player-item');
 
@@ -31,28 +32,36 @@ function createPlayerItems(data) {
 }
 
 // Call the function initially to create and append list items
-createPlayerItems(playerData);
+createPlayerItems(playerRankings);
 
 // Function to filter player list based on position
 function filterByPosition(position) {
-    var filteredData;
+    var filteredKeys;
 
     if (position === 'all') {
-        filteredData = playerData;
+        filteredKeys = playerRankings;
     } else {
-        filteredData = playerData.filter(function (player) {
-            return player.position === position;
+        filteredKeys = playerRankings.filter(function (key) {
+            return playerData[key].position === position;
         });
     }
+
+    // Clear search input
+    document.getElementById('searchInput').value = '';
 
     // Update the position title
     var positionTitle = document.getElementById('position-title');
     positionTitle.textContent = position === 'all' ? '2024 Overall NFL Draft Big Board' : '2024 ' + position + ' NFL Draft Big Board';
 
-    createPlayerItems(filteredData);
+    createPlayerItems(filteredKeys);
+}
 
-    // Clear search input
-    document.getElementById('searchInput').value = '';
+// Function to filter players by search query
+function filterPlayersBySearch(query) {
+    var filteredKeys = playerRankings.filter(function (key) {
+        return playerData[key].name.toLowerCase().includes(query.toLowerCase());
+    });
+    createPlayerItems(filteredKeys);
 }
 
 
@@ -71,13 +80,7 @@ document.querySelectorAll('.position-selection li a').forEach(function (item) {
     });
 });
 
-function filterPlayersBySearch(query) {
-    var filteredData = playerData.filter(function (player) {
-        return player.name.toLowerCase().includes(query.toLowerCase());
-    });
-    createPlayerItems(filteredData);
-}
-
+// Add event listener to search input to filter players by search query
 document.getElementById('searchInput').addEventListener('input', function () {
     var query = this.value;
     filterPlayersBySearch(query);
