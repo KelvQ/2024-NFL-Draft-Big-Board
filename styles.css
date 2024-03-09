@@ -194,12 +194,6 @@ h1 {
 }
 
 /* Search Bar Styles */
-.search-container {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
 .search-input {
     width: 300px; /* Adjust the width as needed */
     padding: 10px;
@@ -211,4 +205,42 @@ h1 {
 
 .search-input:focus {
     border-color: #333;
+}
+
+.position-filter {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filter-container {
+    background-color: #333; /* Grey background */
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.position-filter,
+.search-container {
+    flex: 1; /* Equal width distribution */
+}
+
+.search-container {
+    margin-left: auto; /* Move search container to the right */
+}
+
+.search-container input {
+    width: 100%; /* Full width input */
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: #fff; /* White background */
+}
+
+.search-container input::placeholder {
+    color: #888; /* Placeholder color */
 }
