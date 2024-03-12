@@ -64,8 +64,13 @@ function filterPlayersBySearch(query) {
     createPlayerItems(filteredKeys);
 }
 
+// Add event listener to dropdown menu to filter by position
+document.querySelector('.position-selection-dropdown').addEventListener('change', function () {
+    var position = this.value;
+    filterByPosition(position);
+});
 
-// Add event listeners to position-selection items to filter by position
+// Add event listeners to position-selection items to filter by position for larger screens
 document.querySelectorAll('.position-selection li a').forEach(function (item) {
     item.addEventListener('click', function (e) {
         e.preventDefault();
