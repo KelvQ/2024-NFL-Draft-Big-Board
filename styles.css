@@ -171,6 +171,7 @@ h1 {
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent background image from repeating */
     margin-right: 20px; /* Added margin between image and text */
+    border: 1px solid #333;
 }
 
 .player-school {
