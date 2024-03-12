@@ -56,12 +56,30 @@ function filterByPosition(position) {
     createPlayerItems(filteredKeys);
 }
 
+// Function to filter players by search query and position
+function filterPlayersBySearchAndPosition(query, position) {
+    var filteredKeys;
+
+    if (position === 'all') {
+        // Filter by name only if position is set to 'all'
+        filteredKeys = playerRankings.filter(function (key) {
+            return playerData[key].name.toLowerCase().includes(query.toLowerCase());
+        });
+    } else {
+        // Filter by both name and position
+        filteredKeys = playerRankings.filter(function (key) {
+            var player = playerData[key];
+            return player.name.toLowerCase().includes(query.toLowerCase()) && player.position === position;
+        });
+    }
+
+    createPlayerItems(filteredKeys);
+}
+
 // Function to filter players by search query
 function filterPlayersBySearch(query) {
-    var filteredKeys = playerRankings.filter(function (key) {
-        return playerData[key].name.toLowerCase().includes(query.toLowerCase());
-    });
-    createPlayerItems(filteredKeys);
+    var position = document.querySelector('.position-selection li a.selected').getAttribute('data-position');
+    filterPlayersBySearchAndPosition(query, position);
 }
 
 // Add event listener to dropdown menu to filter by position
