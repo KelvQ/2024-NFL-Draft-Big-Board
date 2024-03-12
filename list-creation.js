@@ -56,7 +56,52 @@ function filterByPosition(position) {
     positionTitle.textContent = position === 'all' ? '2024 Overall NFL Draft Big Board' : '2024 ' + position + ' NFL Draft Big Board';
 
     createPlayerItems(filteredKeys);
+
+    // Update dropdown selection
+    updateDropdownSelection(position);
 }
+
+// Function to update the selected option in the dropdown
+function updateDropdownSelection(position) {
+    var dropdown = document.querySelector('.position-selection-dropdown');
+    dropdown.value = position; // Update dropdown value
+}
+
+// Add event listeners to position-selection items to highlight selection for larger screens
+document.querySelectorAll('.position-selection li a').forEach(function (item) {
+    item.addEventListener('click', function (e) {
+        e.preventDefault();
+        var position = this.getAttribute('data-position');
+        mode = "list";
+        filterByPosition(position);
+
+        // Highlight selected item
+        document.querySelectorAll('.position-selection li a').forEach(function (item) {
+            item.classList.remove('selected'); // Remove selected class from all items
+        });
+        this.classList.add('selected'); // Add selected class to clicked item
+
+        // Update dropdown selection
+        updateDropdownSelection(position);
+    });
+});
+
+// Event listener for dropdown change
+document.querySelector('.position-selection-dropdown').addEventListener('change', function () {
+    var selectedOption = this.options[this.selectedIndex];
+    var position = selectedOption.getAttribute('data-position');
+    filterByPosition(position);
+    mode = "menu";
+
+    // Highlight selected item
+    document.querySelectorAll('.position-selection li a').forEach(function (item) {
+        item.classList.remove('selected'); // Remove selected class from all items
+    });
+    var listItem = document.querySelector('.position-selection li a[data-position="' + position + '"]');
+    if (listItem) {
+        listItem.classList.add('selected'); // Add selected class to corresponding list item
+    }
+});
 
 // Function to filter players by search query and position
 function filterPlayersBySearchAndPosition(query, position) {
@@ -84,41 +129,13 @@ function filterPlayersBySearch(query) {
     filterPlayersBySearchAndPosition(query, position);
 }
 
-document.querySelector('.position-selection-dropdown').addEventListener('change', function () {
-    var selectedOption = this.options[this.selectedIndex];
-    var position = selectedOption.getAttribute('data-position');
-    filterByPosition(position);
-    mode = "menu";
-
-    var positionTitle = document.getElementById('position-title');
-    positionTitle.textContent = position === 'all' ? '2024 Overall NFL Draft Big Board' : '2024 ' + position + ' NFL Draft Big Board';
-});
-
-
-// Add event listeners to position-selection items to filter by position for larger screens
-document.querySelectorAll('.position-selection li a').forEach(function (item) {
-    item.addEventListener('click', function (e) {
-        e.preventDefault();
-        var position = this.getAttribute('data-position');
-        mode = "list";
-        filterByPosition(position);
-
-        // Highlight selected item
-        document.querySelectorAll('.position-selection li a').forEach(function (item) {
-            item.classList.remove('selected'); // Remove selected class from all items
-        });
-        this.classList.add('selected'); // Add selected class to clicked item
-    });
-});
-
-// Add event listener to search input to filter players by search query
+// Event listener for search input
 document.getElementById('searchInput').addEventListener('input', function () {
-    if(mode === "menu") {
+    if (mode === "menu") {
         var query = this.value;
         var position = document.querySelector('.position-selection-dropdown').value; // Get the selected position
         filterPlayersBySearchAndPosition(query, position); // Pass both query and position to the filtering function
-    }
-    else {
+    } else {
         var query = this.value;
         filterPlayersBySearch(query);
     }
