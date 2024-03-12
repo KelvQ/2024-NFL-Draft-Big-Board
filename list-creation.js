@@ -1,3 +1,5 @@
+var mode = "";
+
 // Function to create and append list items to the player list
 function createPlayerItems(keys) {
     var playerList = document.querySelector('.player-list');
@@ -82,17 +84,23 @@ function filterPlayersBySearch(query) {
     filterPlayersBySearchAndPosition(query, position);
 }
 
-// Add event listener to dropdown menu to filter by position
 document.querySelector('.position-selection-dropdown').addEventListener('change', function () {
-    var position = this.value;
+    var selectedOption = this.options[this.selectedIndex];
+    var position = selectedOption.getAttribute('data-position');
     filterByPosition(position);
+    mode = "menu";
+
+    var positionTitle = document.getElementById('position-title');
+    positionTitle.textContent = position === 'all' ? '2024 Overall NFL Draft Big Board' : '2024 ' + position + ' NFL Draft Big Board';
 });
+
 
 // Add event listeners to position-selection items to filter by position for larger screens
 document.querySelectorAll('.position-selection li a').forEach(function (item) {
     item.addEventListener('click', function (e) {
         e.preventDefault();
         var position = this.getAttribute('data-position');
+        mode = "list";
         filterByPosition(position);
 
         // Highlight selected item
@@ -105,6 +113,13 @@ document.querySelectorAll('.position-selection li a').forEach(function (item) {
 
 // Add event listener to search input to filter players by search query
 document.getElementById('searchInput').addEventListener('input', function () {
-    var query = this.value;
-    filterPlayersBySearch(query);
+    if(mode === "menu") {
+        var query = this.value;
+        var position = document.querySelector('.position-selection-dropdown').value; // Get the selected position
+        filterPlayersBySearchAndPosition(query, position); // Pass both query and position to the filtering function
+    }
+    else {
+        var query = this.value;
+        filterPlayersBySearch(query);
+    }
 });
