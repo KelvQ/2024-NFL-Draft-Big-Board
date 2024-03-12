@@ -1,9 +1,19 @@
 var playerRankings = [
     "caleb_williams",
+    "marvin_harrison_jr",
+    "brock_bowers",
+    "malik_nabers",
     "drake_maye",
     "jayden_daniels",
-    "spencer_rattler",
+    "quinyon_mitchell",
+    "rome_odunze",
+    "nate_wiggins",
+    "terrion_arnold",
+    "tyler_nubin",
+    "kamren_kinchens",
     "michael_penix",
+    "javon_bullard",
+    "bo_nix",
+    "spencer_rattler",
     "jj_mccarthy",
-    "bo_nix"
 ];
