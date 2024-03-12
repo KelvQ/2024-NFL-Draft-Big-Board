@@ -107,7 +107,90 @@ var playerData = {
         school: "Alabama",
         position: "CB"
     },
-
+    "cooper_dejean": {
+        name: "Cooper DeJean",
+        image: "images/cb/cooper_dejean.jpg",
+        school: "Iowa",
+        position: "CB"
+    },
+    "chop_robinson": {
+        name: "Chop Robinson",
+        image: "images/edge/chop_robinson.jpg",
+        school: "Penn State",
+        position: "EDGE"
+    },
+    "dallas_turner": {
+        name: "Dallas Turner",
+        image: "images/edge/dallas_turner.jpg",
+        school: "Alabama",
+        position: "EDGE"
+    },
+    "jared_verse": {
+        name: "Jared Verse",
+        image: "images/edge/jared_verse.jpg",
+        school: "Florida State",
+        position: "EDGE"
+    },
+    "byron_murphy": {
+        name: "Byron Murphy II",
+        image: "images/idl/byron_murphy.jpg",
+        school: "Texas",
+        position: "IDL"
+    },
+    "graham_barton": {
+        name: "Graham Barton",
+        image: "images/iol/graham_barton.jpg",
+        school: "Duke",
+        position: "IOL"
+    },
+    "jackson_powers-johnson": {
+        name: "Jackson Powers-Johnson",
+        image: "images/iol/jackson_powers-johnson.jpg",
+        school: "Oregon",
+        position: "IOL"
+    },
+    "zach_frazier": {
+        name: "Zach Frazier",
+        image: "images/iol/zach_frazier.jpg",
+        school: "West Virginia",
+        position: "IOL"
+    },
+    "edgerrin_cooper": {
+        name: "Edgerrin Cooper",
+        image: "images/lb/edgerrin_cooper.jpg",
+        school: "Texas A&M",
+        position: "LB"
+    },
+    "payton_wilson": {
+        name: "Payton Wilson",
+        image: "images/lb/payton_wilson.jpg",
+        school: "North Carolina State",
+        position: "LB"
+    },
+    "joe_alt": {
+        name: "Joe Alt",
+        image: "images/ot/joe_alt.jpg",
+        school: "Notre Dame",
+        position: "OT"
+    },
+    "olu_fashanu": {
+        name: "Olu Fashanu",
+        image: "images/ot/olu_fashanu.jpg",
+        school: "Penn State",
+        position: "OT"
+    },
+    "taliese_fuaga": {
+        name: "Taliese Fuaga",
+        image: "images/ot/taliese_fuaga.jpg",
+        school: "Oregon State",
+        position: "OT"
+    },
+    "troy_fautanu": {
+        name: "Troy Fautanu",
+        image: "images/ot/troy_fautanu.jpg",
+        school: "Washington",
+        position: "OT"
+    },
 
 };
 
