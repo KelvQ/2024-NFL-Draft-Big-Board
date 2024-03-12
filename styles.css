@@ -88,6 +88,7 @@ h1 {
 .position-selection {
     list-style-type: none;
     display: flex;
+    grid-template-columns: repeat(6, calc(16.666% - 10px));
 }
 
 .position-selection li {
