@@ -191,7 +191,90 @@ var playerData = {
         school: "Washington",
         position: "OT"
     },
-
+    "kool-aid_mckinstry": {
+        name: "Kool-Aid McKinstry",
+        image: "images/cb/kool-aid_mckinstry.jpg",
+        school: "Alabama",
+        position: "CB"
+    },
+    "tj_tampa": {
+        name: "T.J. Tampa",
+        image: "images/cb/tj_tampa.jpg",
+        school: "Iowa State",
+        position: "CB"
+    },
+    "laiatu_latu": {
+        name: "Laiatu Latu",
+        image: "images/edge/laiatu_latu.jpg",
+        school: "UCLA",
+        position: "EDGE"
+    },
+    "jerzhan_newton": {
+        name: "Jer'Zahn Newton",
+        image: "images/idl/jerzhan_newton.jpg",
+        school: "Illinois",
+        position: "IDL"
+    },
+    "tvondre_sweat": {
+        name: "T'Vondre Sweat",
+        image: "images/idl/tvondre_sweat.jpg",
+        school: "Texas",
+        position: "IDL"
+    },
+    "amarius_mims": {
+        name: "Amarius Mims",
+        image: "images/ot/amarius_mims.jpg",
+        school: "Georgia",
+        position: "OT"
+    },
+    "jc_latham": {
+        name: "JC Latham",
+        image: "images/ot/jc_latham.jpg",
+        school: "Alabama",
+        position: "OT"
+    },
+    "blake_corum": {
+        name: "Blake Corum",
+        image: "images/rb/blake_corum.jpg",
+        school: "Michigan",
+        position: "RB"
+    },
+    "jaylen_wright": {
+        name: "Jaylen Wright",
+        image: "images/rb/jaylen_wright.jpg",
+        school: "Tennessee",
+        position: "RB"
+    },
+    "jonathan_brooks": {
+        name: "Jonathan Brooks",
+        image: "images/rb/jonathan_brooks.jpg",
+        school: "Texas",
+        position: "RB"
+    },
+    "adonai_mitchell": {
+        name: "Adonai Mitchell",
+        image: "images/wr/adonai_mitchell.jpg",
+        school: "Texas",
+        position: "WR"
+    },
+    "brian_thomas_jr": {
+        name: "Brian Thomas Jr.",
+        image: "images/wr/brian_thomas_jr.jpg",
+        school: "LSU",
+        position: "WR"
+    },
+    "ladd_mcconkey": {
+        name: "Ladd McConkey",
+        image: "images/wr/ladd_mcconkey.jpg",
+        school: "Georgia",
+        position: "WR"
+    },
+    "xavier_legette": {
+        name: "Xavier Legette",
+        image: "images/wr/xavier_legette.jpg",
+        school: "South Carolina",
+        position: "WR"
+    },
 };
 
 // Iterate over keys of playerData and calculate overallRank and positionRank
