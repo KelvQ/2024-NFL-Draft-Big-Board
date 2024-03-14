@@ -40,7 +40,7 @@ createPlayerItems(playerRankings);
 function filterByPosition(position) {
     var filteredKeys;
 
-    if (position === 'all') {
+    if (position === 'Overall') {
         filteredKeys = playerRankings;
     } else {
         filteredKeys = playerRankings.filter(function (key) {
@@ -53,7 +53,12 @@ function filterByPosition(position) {
 
     // Update the position title
     var positionTitle = document.getElementById('position-title');
-    positionTitle.textContent = position === 'all' ? '2024 Overall NFL Draft Big Board' : '2024 ' + position + ' NFL Draft Big Board';
+    if (position === "PG" || position === "SG" || position === "SF" || position === "PF" || position === "C"){
+        positionTitle.textContent = '2024 ' + position + ' NBA Draft Big Board';
+    }
+    else {
+        positionTitle.textContent = '2024 ' + position + ' NFL Draft Big Board';
+    }
 
     createPlayerItems(filteredKeys);
 
@@ -107,8 +112,8 @@ document.querySelector('.position-selection-dropdown').addEventListener('change'
 function filterPlayersBySearchAndPosition(query, position) {
     var filteredKeys;
 
-    if (position === 'all') {
-        // Filter by name only if position is set to 'all'
+    if (position === 'Overall') {
+        // Filter by name only if position is set to 'Overall'
         filteredKeys = playerRankings.filter(function (key) {
             return playerData[key].name.toLowerCase().includes(query.toLowerCase());
         });

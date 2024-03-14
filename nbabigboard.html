@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Draft Big Board</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/logo.png">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html"><img src="images/logo.png" alt="Logo" class="logo"></a>
+            <ul class="navbar-list">
+                <li><a href="index.html">NFL</a></li>
+                <li><a href="nbabigboard.html">NBA</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 id="position-title"> 2024 Overall NBA Draft Big Board</h1>
+        <div class="position-selection-container">
+            <ul class="position-selection">
+                <li><a href="#" data-position="Overall" class="selected">Overall</a></li>
+                <li><a href="#" data-position="PG">PG</a></li>
+                <li><a href="#" data-position="SG">SG</a></li>
+                <li><a href="#" data-position="SF">SF</a></li>
+                <li><a href="#" data-position="PF">PF</a></li>
+                <li><a href="#" data-position="C">C</a></li>
+            </ul>
+            <select class="position-selection-dropdown">
+                <option value="Overall" data-position="Overall">Overall</option>
+                <option value="PG" data-position="PG">PG</option>
+                <option value="SG" data-position="SG">SG</option>
+                <option value="SF" data-position="SF">SF</option>
+                <option value="PF" data-position="PF">PF</option>
+                <option value="C" data-position="C">C</option>
+            </select>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search players...">
+            </div>
+        </div>
+        <div class="position-section">
+            <ul class="player-list">
+                <!-- Players will be dynamically added here -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="nba-player-rankings.js"></script>
+    <script src="nba-player-data.js"></script>
+    <script src="list-creation.js"></script>
+
+</body>
+
+</html>
