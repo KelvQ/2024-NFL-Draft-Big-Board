@@ -1,13 +1,13 @@
 var playerData = {
     "alex_sarr": {
         name: "Alex Sarr",
-        image: "images/wr/marvin_harrison_jr.jpg",
-        school: "NBL",
+        image: "images/NBA/c/alex_sarr.jpg",
+        school: "NBL-Perth Wildcats",
         position: "C"
     },
     "cody_williams": {
         name: "Cody Williams",
-        image: "images/qb/caleb_williams.jpg",
+        image: "images/NBA/sf/cody_williams.jpg",
         school: "Colorado",
         position: "SF"
     },
