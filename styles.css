@@ -63,8 +63,7 @@ h1 {
 }
 
 .navbar-list li a:hover {
-    background-color: #fff; /* Background color on hover */
-    color: #333;  /* Text color on hover */
+    background-color: #053f7d; /* Background color on hover */
 }
 
 .navbar-list li a.selected {
