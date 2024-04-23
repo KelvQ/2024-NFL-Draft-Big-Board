@@ -11,6 +11,18 @@ var playerData = {
         school: "Colorado",
         position: "SF"
     },
+    "reed_sheppard": {
+        name: "Reed Sheppard",
+        image: "images/NBA/sg/reed_sheppard.jpg",
+        school: "Kentucky",
+        position: "SG"
+    },
+    "zaccharie_risacher": {
+        name: "Zaccharie Risacher",
+        image: "images/NBA/pf/zaccharie_risacher.jpg",
+        school: "JL Bourg",
+        position: "PF"
+    },
 };
 
 // Iterate over keys of playerData and calculate overallRank and positionRank
